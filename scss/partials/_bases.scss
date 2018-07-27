@@ -1,0 +1,448 @@
+/***********************************
+               BASE
+***********************************$*/
+html{
+    font-family: $font-default;
+    font-size: $font-size-base;
+}
+
+body{
+    margin: 0;
+}
+
+*{
+    box-sizing:border-box;
+}
+
+main{
+
+}
+
+.container{
+    max-width: $max-width;
+    margin: 0 auto;
+    padding: 0 $marge;
+}
+
+h2{
+    color: #000;
+    font-size: 1.6rem;
+    font-weight: bolder;
+    letter-spacing: 0.5rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+
+nav ul {
+    list-style: none;  
+    margin: 0;
+    padding: 0;
+}
+
+div ul {
+    list-style: none;
+}
+
+a {
+    &:link,
+    &:visited {
+        text-decoration: none;
+        color: $link-color;
+        transition:0.3s;
+       
+    }
+    &:hover,
+    &:focus {
+        color:$light-brown;
+        transition: 0.3s;
+    }
+}
+
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+//HEADER//
+.header{
+    min-height: 20vh;
+    padding: 20px 0 10px;
+    p{
+        color:$gold;
+        position: absolute;
+        right: 15px;
+        top: 10px;
+    }
+    .fa-phone{
+        transform: rotate(90deg);
+    }
+}
+
+.logo{
+    img{
+        margin: 0 auto;
+    }
+}
+
+.site-title{
+    font-size: 0;
+}
+
+
+.header-user{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 20px;
+
+
+    a {
+        font-size: 0;
+    }
+    .fas {
+        color: #000;
+        font-size: 2rem;
+    }
+}
+
+
+.main-nav {
+    display: none;
+}
+
+.burger{
+    font-size: 0;
+    bottom: $marge;
+    left: 50%;
+    position: fixed;
+    z-index: 999;
+    .fa{
+        margin-left: -50%;
+        font-size: 3rem;
+        color:rgb(0, 0, 0);
+        text-shadow: 1px 1px 2px grey;
+    }
+}
+
+.price{
+    text-align: center;
+    color:$dark-grey;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+
+
+
+//MAIN //
+
+.rs{
+    height: 100%;
+    font-size: 3rem;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 2;
+    ul{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        line-height: 0rem;
+    }
+    // ul *{
+    //     display: flex;
+    //     line-height: 3rem;
+    // }
+}
+
+
+//section 1 - presentation
+
+.presentation{
+    background: url('../images/_bg_aztrek.jpg') center;
+    background-size: cover;
+    color:#fff;
+    padding: 60px 15px 80px;
+
+    h2,
+    h3,
+    p{
+        width: 45%;
+    }
+
+    h2{
+        color:#000;
+        font-size: 3rem;
+        text-align: left;
+        text-shadow: 1px 1px 2px $gold;
+    }
+
+    h3{
+        color: $light-brown;
+        font-family: 'Merienda', cursive;
+    }
+    p{
+        color: #fff;
+        font-size: 0.8rem;
+    }
+}
+
+.trip__img{
+    img{
+        margin: 0 auto;
+    }
+}
+
+
+//section 2 trip
+
+.trip{
+    padding-top: 30px;
+
+    h3{
+        color: $light-brown;
+        font-size: 1.4rem;
+        font-weight:bolder;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    p{
+        color: $gold;
+        font-size: 1.2rem;
+        text-align: center;
+    }
+    .btn{
+        @include button (1rem, $grey, $gold);
+        
+    }
+}
+
+
+.trip__img{
+    position:relative;
+}
+
+.cta_trip{
+    position: absolute;
+    top: $marge;
+    left:40%;
+}
+
+
+//section 3 news
+
+.news{
+    padding-top: 30px;
+    h2{
+        font-style: italic;
+        color: white;
+        text-shadow: 2px 2px 4px #000;
+    }
+
+}
+
+.owl-carousel{
+    padding: 80px 40px 60px;
+
+    h3{
+        color: $light-brown;
+        font-size: 1.4rem;
+        font-weight:bolder;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    .item_name{
+        color: $gold;
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    .item{
+        display: flex;
+        flex-direction: column-reverse;
+
+        .items-infos{
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    .owl-nav{
+        button{
+            position: absolute;
+
+            &.owl-prev{
+                color:$gold;
+                font-size: 3rem;
+                left: 10px;
+                top:50%;
+            }
+            &.owl-next{
+                color:$gold;
+                font-size: 3rem;
+                right:10px;
+                top:50%;
+            }
+        }
+    }
+
+    .btn{
+        @include button (1rem, $grey, $gold); 
+    }
+}
+
+
+//section 4 view
+
+.view{
+        background:linear-gradient(to right, rgba(255,0,0,0), rgba(126, 182, 192,0.308));
+        padding: 20px 0;
+    .cta__view{
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        padding-top: 30px;
+        }
+    .btn{
+        @include button (1.5rem, $dark-grey, $gold);
+        border: 1px solid $light-brown;
+        display: inline-block;
+        }
+}
+
+.view__part1{
+    margin-top: 30px;
+}
+
+.view__items{
+    padding-top: 30px;
+}
+
+.pointofview{
+    border: 3px solid $brown;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 10px 10px;
+    h3{
+        color:$gold;
+        text-align: center;
+
+    }
+    img{
+        margin: 0 auto;
+    }
+    .remarque {
+        color:$gold;
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+}
+
+.like-1{
+    color:$gold;
+
+}
+
+.fa-circle{
+    padding-left: 3px;
+}
+
+
+.like{
+    display: flex;
+    justify-content: space-between;
+    div{
+        width: 45%;
+    }
+}
+
+.comments{
+    font-style: italic;
+}
+
+
+//section 5 inescapable
+
+.inescapable {
+    margin-top: 80px;
+    img{
+        margin: 0 auto;
+        padding: 0 2px;
+    }
+    h3{
+        color:$light-brown;
+        font-size: 1.5rem;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    h4{
+        color:$gold;
+        text-align: center;
+    }
+}
+
+
+
+
+//FOOTER//
+
+footer{
+    color:$gold;
+    font-size: 1rem;
+    ul{
+        padding: 0;
+    }
+    p{
+        text-align: center;
+    }
+    img{
+        margin: 0 auto;
+        padding-top: $marge;
+    }
+    .top__footer{
+        line-height: 1rem;
+        padding: 30px 15px 10px;
+        text-align: center;
+    }
+.cta__footer{
+    @include button (1rem, #fff, $gold);
+}
+
+.main__footer{
+    background-color: $dark-grey;
+    padding: 50px;
+}
+
+}
+.footer__part1{
+
+   > div{
+       text-align: center;
+   }
+}
+
+
+.footer__newsletter{
+    text-align: center;
+}
+
+.list__footer1{
+    li{
+        padding-bottom: 10px;
+    }
+}
+
+.list__footer2{
+    li{
+        padding-bottom: 10px;
+    }
+}
+
+
+

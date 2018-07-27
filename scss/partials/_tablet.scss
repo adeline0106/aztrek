@@ -1,0 +1,69 @@
+//HEADER
+
+.header{
+    min-height: 30vh;
+    padding: 20px 0 10px;
+    p{
+        right: 15px;
+        top: 10px;
+    }
+}
+
+
+
+//MAIN
+
+.presentation {
+    padding: 100px 15px 120px;
+}
+
+
+.owl-carousel {
+    .item{
+        flex-direction: row;
+        .item-infos{
+            flex-basis: 33.33%;
+        }
+        .item-img{
+            flex-basis: 66.66%;
+            padding-left : 30px;
+        }
+    }
+}
+
+
+.view__items{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.view {
+    .pointofview{
+        width: 45%;
+    }
+}
+
+
+.cta_trip{
+    position: absolute;
+    top: $marge;
+    left:45%;
+}
+
+
+.inescapable__items{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+
+
+//FOOTER//
+
+.footer__part1{
+    display:flex;
+    justify-content: space-around;
+}

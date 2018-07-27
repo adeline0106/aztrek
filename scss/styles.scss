@@ -1,0 +1,21 @@
+@import 'partials/variables';
+
+@import 'partials/mixins';
+
+@import 'partials/bases'; //pour mobile
+
+@media only screen and (min-width: $bp-tablet){
+    @import 'partials/tablet';
+}
+
+@media only screen and (min-width: $bp-desktop){
+    @import 'partials/desktop';
+}
+
+@font-face {
+    font-family: 'cinzelregular';
+    src: url('../fonts/cinzel-regular-webfont.woff2') format('woff2'),
+         url('../fonts/cinzel-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
