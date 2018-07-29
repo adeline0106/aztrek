@@ -11,7 +11,7 @@ require_once '../../layout/header.php'; ?>
 <hr>
 
 <table class="table table-striped table-bordered table-hover">
-    <thead>
+    <thead class="thead-dark">
         <tr>
             <th>Libellé</th>
             <th>Actions</th>

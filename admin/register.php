@@ -21,15 +21,15 @@
             <label for="inputPrenom" class="sr-only">Prénom</label>
             <input type="text" name="prenom" id="inputPrenom" class="form-control" placeholder="Prénom" required autofocus>
             <label for="inputEmail" class="sr-only">Email</label>
-            <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required>
-            <label for="inputPassword" class="sr-only">mot de passe</label>
-            <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
+            <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email" required>
+            <label for="inputPassword" class="sr-only">Mot de passe</label>
+            <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Mot de passe" required>
              <label for="inputPseudo" class="sr-only">Pseudo</label>
-            <input type="text" name="pseudo" id="inputPseudo" class="form-control">
+             <input type="text" name="pseudo" id="inputPseudo" class="form-control" placeholder="Pseudo">
              <label for="inputAdresse" class="sr-only">Adresse</label>
-            <input type="text" name="adresse" id="inputAdresse" class="form-control">
+             <input type="text" name="adresse" id="inputAdresse" class="form-control" placeholder="Adresse">
              <label for="inputTelephone" class="sr-only">Numéro de téléphone</label>
-            <input type="number" name="telephone" id="inputTelephone" class="form-control">
+             <input type="tel" name="phone" id="inputPhone" class="form-control" placeholder="N° de téléphone">
             <button class="btn btn-lg btn-primary btn-block" type="submit">Créer un compte</button>
             <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
         </form>

@@ -1,17 +1,23 @@
 <?php
 
 /**
- * Retourne la liste des projets
- * @return array Liste des projets
+ * Retourne la liste des séjours
+ * @return array Liste des séjours
  */
 
 function getAllSejours(int $limit = 999): array {
     global $connexion;
     $query = " SELECT
 	sejour.titre,
+        sejour.date_creation,
+        sejour.duree,
         sejour.image,
-        sejour.description_courte
-FROM sejour;";
+        sejour.description_courte,
+        sejour.description_longue
+FROM sejour
+INNER JOIN categorie ON categorie.id = sejour.categorie_id
+INNER JOIN pays ON pays.id = sejour.pays_id
+;";
     
     $stmt = $connexion->prepare($query);
     $stmt->bindParam(":limit", $limit);
@@ -35,7 +41,7 @@ FROM sejour;";
     return $stmt->fetch();
 }
 
-function insertProjet(string $titre, string $image, string $date_debut, string $date_fin, float $prix, string $description, int $categorie_id): int {
+function insertSejour(string $titre, string $image, string $date_debut, string $date_fin, float $prix, string $description, int $categorie_id): int {
     /* @var $connexion PDO */
     global $connexion;
     
@@ -48,13 +54,13 @@ function insertProjet(string $titre, string $image, string $date_debut, string $
     $stmt->bindParam(":date_fin", $date_fin);
     $stmt->bindParam(":description", $description);
     $stmt->bindParam(":prix", $prix);
-     $stmt->bindParam(":categorie_id", $categorie_id);
+    $stmt->bindParam(":categorie_id", $categorie_id);
     $stmt->execute();
     
     return $connexion->lastInsertId();
 }
 
-function updateProjet(int $id, string $titre, string $image, string $date_debut, string $date_fin, float $prix, string $description, int $categorie_id): int {
+function updateSejour(int $id, string $titre, string $image, string $date_debut, string $date_fin, float $prix, string $description, int $categorie_id): int {
     /* @var $connexion PDO */
     global $connexion;
     
@@ -65,7 +71,8 @@ function updateProjet(int $id, string $titre, string $image, string $date_debut,
                     date_fin = :date_fin,
                     prix = :prix,
                     description = :description,
-                    categorie_id = :categorie_id
+                    categorie_id = :categorie_id,
+                    pays_id = :pays_id
                 WHERE id = :id
                 ";
     
@@ -77,7 +84,8 @@ function updateProjet(int $id, string $titre, string $image, string $date_debut,
     $stmt->bindParam(":date_fin", $date_fin);
     $stmt->bindParam(":description", $description);
     $stmt->bindParam(":prix", $prix);
-     $stmt->bindParam(":categorie_id", $categorie_id);
+    $stmt->bindParam(":categorie_id", $categorie_id);
+    $stmt->bindParam(":pays_id", $pays_id);
     $stmt->execute();
     
     return $connexion->lastInsertId();

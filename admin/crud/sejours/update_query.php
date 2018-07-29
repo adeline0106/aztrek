@@ -7,10 +7,10 @@ require_once '../../../model/database.php';
 // Récupération des données du formulaire
 $id = $_POST["id"];
 $titre = $_POST["titre"];
-$date_debut = $_POST["date_debut"];
-$date_fin = $_POST["date_fin"];
+$date_creation = $_POST["date_creation"];
 $prix = $_POST["prix"];
-$description = $_POST["description"];
+$description_courte = $_POST["description_courte"];
+$description_longue = $_POST ["description_longue"];
 $categorie_id = $_POST["categorie_id"];
 
 // Upload de l'image
@@ -27,7 +27,7 @@ move_uploaded_file($tmp, "../../../upload/". $image);
 }
 
 // Enregistrement en base de données
-updateProjet($id, $titre, $image, $date_debut, $date_fin, $prix, $description, $categorie_id);
+updateSejour($id, $titre, $image, $date_creation, $prix, $description_courte, $description_longue, $categorie_id);
 
 // Redirection vers la liste
 header("Location: index.php");

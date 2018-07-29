@@ -19,7 +19,7 @@
 <nav class="main-nav">
                 <ul>
                     <li><a href="index.php">Accueil</a></li>
-                    <li><a href="sejours.php">Nos séjours</a></li>
+                    <li><a href="sejours.php">Nos destinations</a></li>
                     
                     <li><a href="#">Nos thématiques</a></li>
                     <li><a href="#">Nos services</a></li>

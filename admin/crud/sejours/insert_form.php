@@ -22,36 +22,48 @@ require_once '../../layout/header.php';
         </div>
     </div>
     <div class="form-group row">
-        <label class="col-sm-2 col-form-label">Date de début</label>
+        <label class="col-sm-2 col-form-label">Date de création</label>
         <div class="col-sm-10">
-            <input type="date" name="date_debut" class="form-control">
+            <input type="date" name="date_creation" class="form-control">
         </div>
     </div>
     <div class="form-group row">
-        <label class="col-sm-2 col-form-label">Date de fin</label>
+        <label class="col-sm-2 col-form-label">Durée</label>
         <div class="col-sm-10">
-            <input type="date" name="date_fin" class="form-control">
+            <input type="number" name="duree" class="form-control">
         </div>
     </div>
     <div class="form-group row">
-        <label class="col-sm-2 col-form-label">Prix</label>
+        <label class="col-sm-2 col-form-label">Description longue</label>
         <div class="col-sm-10">
-            <input type="number" name="prix" class="form-control">
+            <textarea name="description_courte" class="form-control"></textarea>
         </div>
     </div>
-    <div class="form-group row">
+      <div class="form-group row">
         <label class="col-sm-2 col-form-label">Description</label>
         <div class="col-sm-10">
-            <textarea name="description" class="form-control"></textarea>
+            <textarea name="description_longue" class="form-control"></textarea>
         </div>
     </div>
-    <div class="form-group row">
+     <div class="form-group row">
         <label class="col-sm-2 col-form-label">Catégorie</label>
         <div class="col-sm-10">
             <select name="categorie_id" class="form-control">
                 <?php foreach ($list_categories as $categorie) : ?>
                     <option value="<?php echo $categorie["id"]; ?>">
                         <?php echo $categorie["libelle"]; ?>
+                    </option>
+                <?php endforeach; ?>
+            </select>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Pays</label>
+        <div class="col-sm-10">
+            <select name="pays_id" class="form-control">
+                <?php foreach ($list_pays as $pays) : ?>
+                    <option value="<?php echo $pays["id"]; ?>">
+                        <?php echo $pays["nom"]; ?>
                     </option>
                 <?php endforeach; ?>
             </select>
