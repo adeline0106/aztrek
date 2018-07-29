@@ -87,12 +87,6 @@ img {
     color: black;
     text-shadow: 1px 1px 2px grey; }
 
-.price {
-  text-align: center;
-  color: #1F1C1C;
-  font-size: 1rem;
-  font-weight: bold; }
-
 .rs {
   height: 100%;
   font-size: 3rem;
@@ -130,6 +124,12 @@ img {
 
 .trip__img img {
   margin: 0 auto; }
+
+.price {
+  text-align: center;
+  color: #1F1C1C;
+  font-size: 1rem;
+  font-weight: bold; }
 
 .trip {
   padding-top: 30px; }

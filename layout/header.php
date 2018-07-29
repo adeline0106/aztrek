@@ -6,22 +6,35 @@ $utilisateur = current_user();
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>Ecolidaire - <?php echo $title; ?></title>
-    <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aztrek, un nouveau monde à chaque pas - <?php echo $title; ?></title>
+  <link rel="shortcut icon" href="favicon/favicon_aztrek.png">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,900|Merienda">
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="css/jquery.sidr.light.min.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
 
-     <header class="site-header">
-            <div class="cta-header">
-                <div class="container">
-                    <ul class="cta-contact inline-list">
-                        <li>Téléphone : <a href="tel:0123456789">0123456789</a></li>
-                        <li>Email : <a href="mailto:contact@ecolidaire.fr">contact@ecolidaire.fr</a></li>
-                    </ul>
-                    <div class="cta-social">
+  <header class="header">
+    <p>
+      <i class="fas fa-phone"></i> 0 820 340 340 </p>
+
+    <div class="logo">
+      <img src="images/_logo_aztrek.png" alt="logo Aztrek">
+      <h1 class="site-title">Aztrek</h1>
+    </div>
+
+
+            <?php require_once 'layout/nav.php'; ?>
+        
+          <div class="cta-social">
                         <ul class="inline-list">
                             <?php if (empty($utilisateur)) : ?>
                                 <li>
@@ -52,33 +65,6 @@ $utilisateur = current_user();
                                     </a>
                                 </li>
                             <?php endif; ?>
-                            <a href="http://www.facebook.com">
-                                <span class="fa-stack fa-lg">
-                                  <i class="fa fa-circle fa-stack-2x"></i>
-                                  <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://www.twitter.com">
-                                <span class="fa-stack fa-lg">
-                                  <i class="fa fa-circle fa-stack-2x"></i>
-                                  <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="container main-header">
-            <a href="index.php" class="logo">
-                <span class="fa-stack fa-lg">
-                    <i class="fa fa-circle fa-stack-2x"></i>
-                    <i class="fa fa-tree fa-stack-1x fa-inverse"></i>
-                </span>
-            </a>
-            <?php require_once 'layout/nav.php'; ?>
         </div>
     </header>
 

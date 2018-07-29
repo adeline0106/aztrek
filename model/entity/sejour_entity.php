@@ -5,23 +5,13 @@
  * @return array Liste des projets
  */
 
-function getAllProjects(int $limit = 999): array {
+function getAllSejours(int $limit = 999): array {
     global $connexion;
-    $query = "SELECT 
-            projet.*,
-            DATE_FORMAT(projet.date_debut, '%d/%m/%Y') AS date_debut_format,
-            REPLACE(FORMAT(projet.prix, 'currency', 'de_DE'), '.', ' ') AS prix_format,
-        categorie.libelle AS categorie,
-        COUNT(participation.id) AS nb_participants,
-        IFNULL(SUM(participation.montant), 0) AS montant_participations,
-        AVG(notation.note) AS note_moyenne
-    FROM projet
-    INNER JOIN categorie ON categorie.id = projet.categorie_id
-    LEFT JOIN participation ON participation.projet_id = projet.id
-    LEFT JOIN notation ON notation.projet_id = projet.id
-    GROUP BY projet.id
-    ORDER BY projet.date_debut DESC
-    LIMIT :limit;";
+    $query = " SELECT
+	sejour.titre,
+        sejour.image,
+        sejour.description_courte
+FROM sejour;";
     
     $stmt = $connexion->prepare($query);
     $stmt->bindParam(":limit", $limit);
@@ -30,21 +20,13 @@ function getAllProjects(int $limit = 999): array {
     return $stmt->fetchAll();
 }
 
-function getProject(int $id): array {
+function getSejour(int $id): array {
     global $connexion;
     $query = "SELECT 
-            projet.*,
-            DATE_FORMAT(projet.date_debut, '%d/%m/%Y') AS date_debut_format,
-            REPLACE(FORMAT(projet.prix, 'currency', 'de_DE'), '.', ' ') AS prix_format,
-        categorie.libelle AS categorie,
-        COUNT(participation.id) AS nb_participants,
-        IFNULL(SUM(participation.montant), 0) AS montant_participations,
-        AVG(notation.note) AS note_moyenne
-    FROM projet
-    INNER JOIN categorie ON categorie.id = projet.categorie_id
-    LEFT JOIN participation ON participation.projet_id = projet.id
-    LEFT JOIN notation ON notation.projet_id = projet.id
-    WHERE projet.id = :id;";
+        sejour.titre,
+        sejour.image,
+        sejour.description_longue
+FROM sejour;";
     
     $stmt = $connexion->prepare($query);
     $stmt->bindParam(":id", $id);
