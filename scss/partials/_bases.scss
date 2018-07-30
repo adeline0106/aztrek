@@ -389,6 +389,77 @@ img {
 
 
 
+//LISTE_PAYS//
+
+.isotope{
+    min-height: 800px;
+}
+
+.button-group h2{
+	display:inline-block;
+	margin-right:20px;
+}
+.button {
+  	display: inline-block;
+  	padding: 10px 18px;
+  	margin-bottom: 10px;
+  	background: #EEE;
+  	border: none;
+  	color: #222;
+  	font-size: 1em;
+  	cursor: pointer;
+}
+
+.button:hover {
+  	background-color: #9BB;
+  	color: #222;
+}
+
+.button:active,
+.button.is-checked {
+  	background-color: #399;
+  	outline:none;
+}
+
+.button.is-checked {
+  	color: white;
+}
+
+/* ---- isotope ---- */
+.grid{
+}
+/* clear fix */
+.grid::after {
+  	content: '';
+  	display: table;
+  	clear: both;
+}
+
+/* ---- .element-item ---- */
+
+.element-item {
+	margin: 5px;
+	position:relative;
+        
+            h4{
+            font-size: 1.2rem;
+            }
+            
+            img{
+               width: 300px;
+               height: 300px;
+            }
+        
+}
+
+.desc_courte {
+    width: 300px;
+    height: 300px;
+    
+}
+
+
+
 
 //FOOTER//
 
