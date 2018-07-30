@@ -1,25 +1,25 @@
 <?php
+
 require_once __DIR__ . '/../model/database.php';
 
-
-function debug ($var){
+function debug($var) {
     echo "<pre>";
     echo print_r($var);
     echo "</pre>";
 }
 
-function current_user(){
-    if(!isset($_SESSION)){
-    session_start();
+function current_user() {
+    if (!isset($_SESSION)) {
+        session_start();
     }
-    if(!isset($_SESSION["id"])){
+    if (!isset($_SESSION["id"])) {
         return null;
     }
     return getOneEntity("utilisateur", $_SESSION["id"]);
 }
 
-function is_image(string $filepath) : bool {
-    if (!is_file($filepath)){
+function is_image(string $filepath): bool {
+    if (!is_file($filepath)) {
         return false;
     }
     switch (pathinfo($filepath, PATHINFO_EXTENSION)) {
@@ -34,12 +34,38 @@ function is_image(string $filepath) : bool {
     }
 }
 
-function get_avatar(string $image = null) : string {
-    if(is_image("upload/" .$image)){
-        return "upload/" .$image;
+function get_avatar(string $image = null): string {
+    if (is_image("upload/" . $image)) {
+        return "upload/" . $image;
     } else {
         return "images/avatar.png";
     }
+}
+
+function slugify($text) {
+    // replace non letter or digits by -
+    $text = preg_replace('~[^\pL\d]+~u', '-', $text);
+
+    // transliterate
+    $text = iconv('utf-8', 'us-ascii//TRANSLIT', $text);
+
+    // remove unwanted characters
+    $text = preg_replace('~[^-\w]+~', '', $text);
+
+    // trim
+    $text = trim($text, '-');
+
+    // remove duplicate -
+    $text = preg_replace('~-+~', '-', $text);
+
+    // lowercase
+    $text = strtolower($text);
+
+    if (empty($text)) {
+        return 'n-a';
+    }
+
+    return $text;
 }
 
 /**
@@ -54,15 +80,14 @@ function display_nav_item(string $url, string $label, string $icon, bool $exact 
     if ($exact) {
         $navClass = ($currentUrl == $url) ? "active" : "";
     } else {
-        $navClass = (strpos($currentUrl,$url)=== 0) ? "active" : "";
+        $navClass = (strpos($currentUrl, $url) === 0) ? "active" : "";
     }
-    echo   "<li class=\"nav-item\">
+    echo "<li class=\"nav-item\">
                 <a class=\"nav-link $navClass\" href=\"$url\">
                     <i class=\"fa $icon\"></i>
                     $label <span class=\"sr-only\">(current)</span>
                 </a>
             </li>";
-    
 }
 
 function get_header(string $title) {
@@ -72,7 +97,3 @@ function get_header(string $title) {
 function get_footer() {
     require_once 'layout/footer.php';
 }
-
-
-
-

@@ -19,9 +19,9 @@
 <nav class="main-nav">
                 <ul>
                     <li><a href="index.php">Accueil</a></li>
-                    <li><a href="sejours.php">Nos destinations</a></li>
+                    <li><a href="liste_pays.php">Nos destinations</a></li>
                     
-                    <li><a href="#">Nos thématiques</a></li>
+                    <li><a href="liste_categories.php">Nos thématiques</a></li>
                     <li><a href="#">Nos services</a></li>
                     <li><a href="#">Nos conseillers</a></li>
                     <li><a href="#">Forum</a></li>

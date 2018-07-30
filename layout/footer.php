@@ -53,6 +53,7 @@
   <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/jquery.sidr.min.js"></script>
   <script src="js/owl.carousel.min.js"></script>
+  <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
   <script src="js/scripts.js"></script>
 
 </body>

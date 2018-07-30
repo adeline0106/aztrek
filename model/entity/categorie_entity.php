@@ -27,3 +27,17 @@ function updateCategorie(int $id, string $libelle) {
     
     
 }
+
+function getAllCategories(int $limit = 999): array {
+    global $connexion;
+    $query = " SELECT
+	categorie.libelle
+FROM categorie
+;";
+    
+    $stmt = $connexion->prepare($query);
+    $stmt->bindParam(":limit", $limit);
+    $stmt->execute();
+    
+    return $stmt->fetchAll();
+}
