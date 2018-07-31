@@ -37,7 +37,7 @@ get_header("Accueil");
           <h3>Salvador</h3>
           <p>Tazumal</p>
           <div class="trip__img">
-            <img src="images/d_dernieresmn_photo1.jpg" alt="Salvador, Tazumal">
+            <img src="uploads/d_dernieresmn_photo1.jpg" alt="Salvador, Tazumal">
             <a href="#" class="btn cta_trip">En savoir +</a>
             <p class="price">à partir de 1790€</p>
           </div>
@@ -47,7 +47,7 @@ get_header("Accueil");
           <h3>Guatemala</h3>
           <p>Découverte des volcans : Fuego</p>
           <div class="trip__img">
-            <img src="images/d_dernieresmn_photo2.jpg" alt="Guatemala, Découverte des volcans : Fuego">
+            <img src="uploads/d_dernieresmn_photo2.jpg" alt="Guatemala, Découverte des volcans : Fuego">
             <a href="#" class="btn cta_trip">En savoir +</a>
             <p class="price">à partir de 1950€</p>
           </div>
@@ -71,7 +71,7 @@ get_header("Accueil");
           </div>
           <div class="item-img">
             <a href="#">
-            <img src="images/b_slider_photo1.jpg" alt="Découverte de la région du Sierra Las Minas">
+            <img src="uploads/b_slider_photo1.jpg" alt="Découverte de la région du Sierra Las Minas">
             </a>
           </div>
         </article>
@@ -88,7 +88,7 @@ get_header("Accueil");
           </div>
           <div class="item-img">
             <a href="#">
-            <img src="images/b_slider_photo2.jpg" alt="Découverte de la région du Sierra Las Minas">
+            <img src="uploads/b_slider_photo2.jpg" alt="Découverte de la région du Sierra Las Minas">
             </a>
           </div>
         </article>
@@ -105,7 +105,7 @@ get_header("Accueil");
           </div>
           <div class="item-img">
             <a href="#">
-            <img src="images/b_slider_photo3.jpg" alt="Découverte de la région du Sierra Las Minas">
+            <img src="uploads/b_slider_photo3.jpg" alt="Découverte de la région du Sierra Las Minas">
             </a>
           </div>
         </article>
@@ -122,7 +122,7 @@ get_header("Accueil");
           </div>
           <div class="item-img">
             <a href="#">
-            <img src="images/b_slider_photo4.jpg" alt="Découverte de la région du Sierra Las Minas">
+            <img src="uploads/b_slider_photo4.jpg" alt="Découverte de la région du Sierra Las Minas">
             </a>
           </div>
         </article>
@@ -139,7 +139,7 @@ get_header("Accueil");
           </div>
           <div class="item-img">
             <a href="#">
-            <img src="images/b_slider_photo5.jpg" alt="Découverte de la région du Sierra Las Minas">
+            <img src="uploads/b_slider_photo5.jpg" alt="Découverte de la région du Sierra Las Minas">
             </a>
           </div>
         </article>
@@ -303,7 +303,7 @@ get_header("Accueil");
             <i class="fas fa-circle"></i>
             <i class="far fa-circle"></i>
           </p>
-          <img src="images/c_partage_photo3.jpg" alt="GUATEMALA - Au coeur du monde Mayas  ">
+          <img src="uploads/c_partage_photo3.jpg" alt="GUATEMALA - Au coeur du monde Mayas  ">
 
           <div class="like">
             <div>
@@ -356,7 +356,7 @@ get_header("Accueil");
             <i class="fas fa-circle"></i>
             <i class="far fa-circle"></i>
           </p>
-          <img src="images/c_partage_photo4.jpg" alt="COSTA RICA - Ecotourisme tropical">
+          <img src="uploads/c_partage_photo4.jpg" alt="COSTA RICA - Ecotourisme tropical">
 
           <div class="like">
             <div>
@@ -387,21 +387,21 @@ get_header("Accueil");
         <article>
           <h3>Mexique</h3>
           <h4>Trésors du Yucatàn</h4>
-          <img src="images/a_sejour1.jpg" alt="Trésors du Yucatàn">
+          <img src="uploads/s/a_sejour1.jpg" alt="Trésors du Yucatàn">
           <p class="price">à partir de 1350€</p>
         </article>
 
         <article>
           <h3>Mexique</h3>
           <h4>Caminando Mexico</h4>
-          <img src="images/a_sejour2.jpg" alt="Caminando Mexico">
+          <img src="uploads/a_sejour2.jpg" alt="Caminando Mexico">
           <p class="price">à partir de 1560€</p>
         </article>
 
         <article>
           <h3>Mexique</h3>
           <h4>Les volcans</h4>
-          <img src="images/a_sejour3.jpg" alt="Les volcans">
+          <img src="uploads/a_sejour3.jpg" alt="Les volcans">
           <p class="price">à partir de 1840€</p>
         </article>
       </div>

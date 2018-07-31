@@ -17,6 +17,18 @@ get_header($sejour["titre"]);
 
 <section class="container">
     <h1><?php echo $sejour["titre"]; ?></h1>
+    
+    
+<article class="container">
+        <img src="uploads/<?php echo $sejour["image"]; ?>" alt="<?php echo $sejour["titre"]; ?>">
+       
+                <div class="">
+                    <i class=""></i>
+                    <?php echo $sejour["description_courte"]; ?>
+                </div>
+        
+</article>
+
 
     
 

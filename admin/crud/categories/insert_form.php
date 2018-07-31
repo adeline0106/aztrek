@@ -4,9 +4,9 @@
 
 <form action="insert_query.php" method="post">
     <div class="form-group row">
-        <label for="input-libelle" class="col-sm-2 col-form-label">Libellé</label>
+        <label for="input-libelle" class="col-sm-2 col-form-label">Catégorie</label>
         <div class="col-sm-10">
-            <input type="text" name="libelle" class="form-control" id="input-libelle" placeholder="Libellé">
+            <input type="text" name="libelle" class="form-control" id="input-libelle" placeholder="Catégorie">
         </div>
         
     </div>

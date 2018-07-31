@@ -284,11 +284,11 @@ img {
 .isotope {
   min-height: 800px; }
 
-.button-group h2 {
+.filters-button-group h2 {
   display: inline-block;
   margin-right: 20px; }
 
-.button {
+.button_iso {
   display: inline-block;
   padding: 10px 18px;
   margin-bottom: 10px;
@@ -298,16 +298,16 @@ img {
   font-size: 1em;
   cursor: pointer; }
 
-.button:hover {
-  background-color: #9BB;
+.button_iso:hover {
+  background-color: burlywood;
   color: #222; }
 
-.button:active,
-.button.is-checked {
+.button_iso:active,
+.button_iso.is-checked {
   background-color: #399;
   outline: none; }
 
-.button.is-checked {
+.button_iso.is-checked {
   color: white; }
 
 /* ---- isotope ---- */
@@ -318,16 +318,16 @@ img {
   clear: both; }
 
 /* ---- .element-item ---- */
-.element-item {
+.element-item-iso {
   margin: 5px;
   position: relative; }
-  .element-item h4 {
+  .element-item-iso h4 {
     font-size: 1.2rem; }
-  .element-item img {
+  .element-item-iso img {
     width: 300px;
     height: 300px; }
 
-.desc_courte {
+.desc_courte_iso {
   width: 300px;
   height: 300px; }
 

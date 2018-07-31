@@ -28,11 +28,19 @@ INNER JOIN pays ON pays.id = sejour.pays_id
 
 function getSejour(int $id): array {
     global $connexion;
-    $query = "SELECT 
-        sejour.titre,
+
+        $query = " SELECT
+	sejour.titre,
+        sejour.date_creation,
+        sejour.duree,
         sejour.image,
+        sejour.description_courte,
         sejour.description_longue
-FROM sejour;";
+FROM sejour
+INNER JOIN categorie ON categorie.id = sejour.categorie_id
+INNER JOIN pays ON pays.id = sejour.pays_id
+WHERE sejour.id=:id
+;";
     
     $stmt = $connexion->prepare($query);
     $stmt->bindParam(":id", $id);
@@ -41,38 +49,41 @@ FROM sejour;";
     return $stmt->fetch();
 }
 
-function insertSejour(string $titre, string $image, string $date_debut, string $date_fin, float $prix, string $description, int $categorie_id): int {
+function insertSejour(string $titre, string $image, int $duree, string $date_creation, string $description_courte, string $description_longue, int $categorie_id, int $pays_id, int $incontournable): int {
     /* @var $connexion PDO */
     global $connexion;
     
-    $query = "INSERT INTO projet (titre, image, date_debut, date_fin, description, prix, categorie_id) VALUES (:titre, :image, :date_debut, :date_fin, :description, :prix, :categorie_id)";
+    $query = "INSERT INTO sejour (titre, duree, image, date_creation, description_courte, description_longue, categorie_id, pays_id, incontournable) VALUES (:titre, :image, :duree, :date_creation, :description_courte, :description_longue, :categorie_id, :pays_id, :incontournable)";
     
     $stmt = $connexion->prepare($query);
     $stmt->bindParam(":titre", $titre);
     $stmt->bindParam(":image", $image);
-    $stmt->bindParam(":date_debut", $date_debut);
-    $stmt->bindParam(":date_fin", $date_fin);
-    $stmt->bindParam(":description", $description);
-    $stmt->bindParam(":prix", $prix);
+    $stmt->bindParam(":duree", $duree);
+    $stmt->bindParam(":date_creation", $date_creation);
+    $stmt->bindParam(":description_courte", $description_courte);
+    $stmt->bindParam(":description_longue", $description_longue);
     $stmt->bindParam(":categorie_id", $categorie_id);
+    $stmt->bindParam(":pays_id", $pays_id);
+    $stmt->bindParam(":incontournable", $incontournable);
     $stmt->execute();
     
     return $connexion->lastInsertId();
 }
 
-function updateSejour(int $id, string $titre, string $image, string $date_debut, string $date_fin, float $prix, string $description, int $categorie_id): int {
+function updateSejour(int $id, string $titre, string $image, int $duree, string $date_creation, string $description_courte, string $description_longue, int $categorie_id, int $pays_id, int $incontournable): int {
     /* @var $connexion PDO */
     global $connexion;
     
     $query = "UPDATE projet 
                 SET titre = :titre,
                     image = :image,
-                    date_debut = :date_debut,
-                    date_fin = :date_fin,
-                    prix = :prix,
-                    description = :description,
+                    duree = :duree,
+                    date_creation = :date_creation,
+                    description_courte = :description_courte,
+                    description_longue = :description_longue,
                     categorie_id = :categorie_id,
-                    pays_id = :pays_id
+                    pays_id = :pays_id,
+                    incontournable = :incontournable
                 WHERE id = :id
                 ";
     
@@ -80,12 +91,13 @@ function updateSejour(int $id, string $titre, string $image, string $date_debut,
     $stmt->bindParam(":id", $id);
     $stmt->bindParam(":titre", $titre);
     $stmt->bindParam(":image", $image);
-    $stmt->bindParam(":date_debut", $date_debut);
-    $stmt->bindParam(":date_fin", $date_fin);
-    $stmt->bindParam(":description", $description);
-    $stmt->bindParam(":prix", $prix);
+    $stmt->bindParam(":duree", $duree);
+    $stmt->bindParam(":date_creation", $date_creation);
+    $stmt->bindParam(":description_courte", $description_courte);
+    $stmt->bindParam(":description_longue", $description_longue);
     $stmt->bindParam(":categorie_id", $categorie_id);
     $stmt->bindParam(":pays_id", $pays_id);
+    $stmt->bindParam(":incontournable", $incontournable);
     $stmt->execute();
     
     return $connexion->lastInsertId();

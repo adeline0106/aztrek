@@ -1,7 +1,8 @@
 <?php
 require_once '../../../model/database.php';
 
-$list_categories = getAllEntities("categorie");
+$liste_categories = getAllEntities("categorie");
+$liste_pays = getAllEntities("pays");
 
 require_once '../../layout/header.php';
 ?>
@@ -49,7 +50,7 @@ require_once '../../layout/header.php';
         <label class="col-sm-2 col-form-label">Catégorie</label>
         <div class="col-sm-10">
             <select name="categorie_id" class="form-control">
-                <?php foreach ($list_categories as $categorie) : ?>
+                <?php foreach ($liste_categories as $categorie) : ?>
                     <option value="<?php echo $categorie["id"]; ?>">
                         <?php echo $categorie["libelle"]; ?>
                     </option>
@@ -61,7 +62,7 @@ require_once '../../layout/header.php';
         <label class="col-sm-2 col-form-label">Pays</label>
         <div class="col-sm-10">
             <select name="pays_id" class="form-control">
-                <?php foreach ($list_pays as $pays) : ?>
+                <?php foreach ($liste_pays as $pays) : ?>
                     <option value="<?php echo $pays["id"]; ?>">
                         <?php echo $pays["nom"]; ?>
                     </option>
@@ -69,6 +70,13 @@ require_once '../../layout/header.php';
             </select>
         </div>
     </div>
+     <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Incontournable</label>
+        <div class="col-sm-10">
+            <input type="checkbox" name="incontournable" class="form-control">
+        </div>
+    </div>
+    
     <button type="submit" class="btn btn-success float-right">
         <i class="fa fa-save"></i>
         Enregistrer

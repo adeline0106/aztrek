@@ -3,9 +3,10 @@
 require_once '../../security.php';
 require_once '../../../model/database.php';
 
-$libelle = $_POST["libelle"];
+$nom = $_POST["nom"];
+$image = $_POST["image"];
 
-insertCategorie($libelle);
+insertPays($nom, $image);
 
 header("Location: index.php");
 
