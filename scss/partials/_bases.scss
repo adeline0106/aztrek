@@ -270,6 +270,11 @@ img {
             display: flex;
             flex-direction: column;
         }
+        .item-img{
+            max-width: 700px;
+            max-height: 600px;
+        }    
+        
     }
 
     .owl-nav{

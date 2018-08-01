@@ -42,7 +42,8 @@ require_once __DIR__ . '/../security.php';
                             <?php display_nav_item(SITE_ADMIN, "Dashboard", "fa-home",true); ?>
                             <?php display_nav_item(SITE_ADMIN . "crud/categories/","Categories", "fa-tags"); ?>
                             <?php display_nav_item(SITE_ADMIN . "crud/sejours/","Sejours", "fa-plane"); ?>
-                            <?php display_nav_item(SITE_ADMIN . "crud/destinations/","Destinations","fa-globe"); ?>
+                            <?php display_nav_item(SITE_ADMIN . "crud/pays/","Pays","fa-globe"); ?>
+                            <?php display_nav_item(SITE_ADMIN . "crud/reservations/","Réservations","fa-credit-card"); ?>
                             
                           
                         </ul>

@@ -187,6 +187,9 @@ img {
     .owl-carousel .item .items-infos {
       display: flex;
       flex-direction: column; }
+    .owl-carousel .item .item-img {
+      max-width: 700px;
+      max-height: 600px; }
   .owl-carousel .owl-nav button {
     position: absolute; }
     .owl-carousel .owl-nav button.owl-prev {

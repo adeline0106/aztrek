@@ -23,12 +23,6 @@ require_once '../../layout/header.php';
         </div>
     </div>
     <div class="form-group row">
-        <label class="col-sm-2 col-form-label">Date de création</label>
-        <div class="col-sm-10">
-            <input type="date" name="date_creation" class="form-control">
-        </div>
-    </div>
-    <div class="form-group row">
         <label class="col-sm-2 col-form-label">Durée</label>
         <div class="col-sm-10">
             <input type="number" name="duree" class="form-control">
